@@ -1,0 +1,92 @@
+QUESTION 1:
+
+
+// Address.java
+package classproblems;
+
+public class Address {
+	private String addressLine1,addressLine2,city,state;
+	private int pincode;
+	public Address(String addressLine1,String addressLine2, String city,String state, Integer pincode) {
+		this.addressLine1 =addressLine1;
+		this.addressLine2 =addressLine2;
+		this.city = city;
+		this.state = state;
+		this.pincode = pincode;
+	}
+
+	public String getAddressLine1() {
+		return addressLine1;
+	}
+
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 =addressLine1;
+	}
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 =addressLine2;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state =state;
+	}
+	public Integer getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
+	}
+
+	@Override
+	public String toString() {
+		return "\n"+addressLine1+" \n"+addressLine2+"\n" + city + "\n"+state+"\n" + pincode;
+	}
+}
+//MainAdd.java
+
+
+package classproblems;
+import java.util.*;
+public class MainAdd {
+
+	public static void main(String[] args)
+	{
+		
+		String s1,s2,s3,s4;
+		Integer n;
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter AddressLine 1:");
+		s1=s.nextLine();
+		System.out.println("Enter AddressLine 2:");
+		s2=s.nextLine();
+		System.out.println("Enter city:");
+		s3=s.nextLine();
+		System.out.println("Enter State:");
+		s4=s.nextLine();
+		System.out.println("Enter Pincode:");
+		n=s.nextInt();
+		Address c= new Address(s1,s2,s3,s4,n);
+		c.setAddressLine1(s1);
+		c.setAddressLine2(s2);
+		c.setCity(s3);
+		c.setState(s4);
+		c.setPincode(n);
+
+		System.out.println("The Address Details are:"+c.toString());
+	}
+}
